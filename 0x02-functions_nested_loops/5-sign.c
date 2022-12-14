@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_sign - checks the sign of n and print it
+ * print_sign - check the sign of n and print it
  *
  * @n: any number as para
  * Return: 1 if n is +ve, 0 if n is 0, -1 if n is -ve.
@@ -20,7 +20,7 @@ int print_sign(int n)
 	}
 	else
 	{
-		putchar('-');
+		_putchar('-');
 		return (-1);
 	}
 }
