@@ -1,18 +1,27 @@
 #include "main.h"
-
+#include <limits.h>
 /**
  * print_last_digit - prints the last digit
  * @n: the number
- * Return: value of the last digit
+ * Return: n%10 if n>=0, -n%10 if n<0
  */
 int print_last_digit(int n)
 {
-	int ld = n % 10;
+	if (n < 0)
+	{
+		if (n == INT_MIN)
+		{
+			long m = INT_MAX;
 
-	if (ld < 0)
-		ld *= -1;
 
-	_putchar(ld + '0');
-
-	return (0);
+			m++;
+			_putchar(m % 10 + '0');
+			return (m % 10);
+		}
+		n = -n;
+		_putchar(n % 10 + '0');
+		return (n % 10);
+	}
+	_putchar(n % 10 + '0');
+	return (n % 10);
 }
